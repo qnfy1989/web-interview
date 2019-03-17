@@ -8,6 +8,7 @@ You can start with forking this repository and off you go.
 
 Good luck!
 
+
 ## Task
 
 * We have provided you with a designs folder that display what we expect the page to look like. The task is only for mobile screens up to **716** in width so don't worry about displaying in larger screens.
@@ -104,3 +105,9 @@ If you feel like spending a bit more time on this then here are some additions y
 * There is an extra endpoint in our api at: `GET /users/:userId/family-members`. This will return an array of user Id(s) that represent the user's family members. In the design, add the 'Change' button next to the user's name in `design/new-appointment.png`. When pressed, this should allow you to choose a family member instead of the user. This should be reflected in your final `POST` request, where the `userId` should be the family member's rather than the user's.
 
 * Feel free to comment and iterate on the design; we would love to hear your opinion about any aspect of this page.
+
+## Running test
+
+* To display the page first make sure all dependencies have been installed by running `yarn install` and then run `yarn start`.
+
+* In its current state the app allows to display basic user's information on a booking an appointment page and to make an actual request to book an appointment

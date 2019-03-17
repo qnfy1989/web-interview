@@ -10,6 +10,188 @@ header {
   border-bottom: $border-standard;
 }
 
+.app {
+  width: 100%;
+  height: 500px;
+}
+
 .booking-container {
   padding-left: 12px;
+}
+
+.big-title {
+  font-size: 40px;
+  font-weight: 700;
+  padding-bottom: 40px;
+  padding-top: 10px;
+}
+
+.personal-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newapp-container {
+  margin: auto 0;
+  padding: 30px;
+}
+
+.change-family-member-button {
+  font-size: 20px;
+  color: $positive;
+  align-self: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.img-avatar {
+  padding: 15px 30px 15px 0;
+}
+
+.full-name {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.divider {
+  position: absolute;
+  top: 259px;
+  left: 30px;
+  right: 30px;
+  height: 1px;
+  background-color: #dddddd;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 600;
+  padding: 15px;
+}
+
+.available-slot {
+  border-radius: 20px;
+  height: 40px;
+  line-height: 20px;
+  padding: 10px 20px;
+  border: solid 1px $light-grey;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.slot {
+  color: white;
+  background-color: $positive;
+}
+
+.unselected-slot {
+  color: grey;
+  background-color: white;
+}
+
+.notes {
+  height: 200px;
+  width: 95%;
+  margin-left: 5%;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.book-button {
+  width: 100%;
+  background-color: $positive;
+  border-radius: 12px;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $positive-light;
+  color: white;
+}
+
+.change-family-member-button:hover {
+  color: $positive-light;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:disabled {
+  background-color: $transparent-grey;
+  cursor: not-allowed;
+}
+
+textarea:focus {
+  outline: 0;
+}
+
+li,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.date-display {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.app-header {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-text {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+@media (max-width: 620px) {
+  .date-display {
+    display: block;
+  }
+  .slot,
+  .unselected-slot {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 530px) {
+  .app-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .icon-text {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .big-title {
+    font-size: 30px;
+  }
 }

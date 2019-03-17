@@ -1,32 +1,58 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import { Icon } from 'semantic-ui-react'
 
-import logo from './logo.png'
 import { API_ENDPOINT } from './config'
-
 import './App.scss'
+import NewAppointment from './components/NewAppointment'
+import Header from './components/Header'
+import Query from './components/Query'
 
-class App extends Component {
-  componentDidMount() {
-    fetch(`${API_ENDPOINT}/users/1`)
-      .then(res => res.json())
-      .then(() => {
-        // TODO: Handle response here
-      })
-      .catch(() => {
-        // TODO: Handle error here
-      })
-  }
+function Loading() {
+  return <Icon name={'spinner'} loading />
+}
 
-  render() {
-    return (
-      <div className="app">
-        <header className="app-header">
-          <img src={logo} className="app-logo" alt="logo" />
-        </header>
-        <h1>This is where your code goes!</h1>
-      </div>
-    )
-  }
+function App() {
+  const [prevFetchedData, setData] = useState(null)
+  return (
+    <div className="app">
+      <Header />
+      <Query query={`${API_ENDPOINT}/users/1`}>
+        {({ fetching, data, error, loaded }) =>
+          error ? (
+            <>
+              <div>There was an error when loading the data</div>
+              <p>{`${error}`}</p>
+            </>
+          ) : fetching ? (
+            <Loading />
+          ) : data ? (
+            <>
+              <div />
+              {setData(data)}
+            </>
+          ) : (
+            <Loading />
+          )
+        }
+      </Query>
+      <Query query={`${API_ENDPOINT}/availableSlots`}>
+        {({ fetching, data, error, loaded }) =>
+          error ? (
+            <>
+              <div>There was an error when loading the data</div>
+              <p>{`${error}`}</p>
+            </>
+          ) : fetching ? (
+            <Loading />
+          ) : data ? (
+            <NewAppointment {...prevFetchedData} slots={data} />
+          ) : (
+            <Loading />
+          )
+        }
+      </Query>
+    </div>
+  )
 }
 
 export default App
