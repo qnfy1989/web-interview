@@ -24,7 +24,7 @@ function Query({ query, normalize = data => data, children }) {
         error =>
           setState({
             data: null,
-            error: console.log('error', error) || error,
+            error,
             loaded: false,
             fetching: false,
           })
